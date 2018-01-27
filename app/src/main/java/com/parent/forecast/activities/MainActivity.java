@@ -88,14 +88,6 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     }
 
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-
-        getSupportLoaderManager().restartLoader(0, null, this);
-
-
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -228,6 +220,12 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 
 
             }
+            Intent intent = getIntent();
+            finish();
+            startActivity(intent);
+
+
+
             SharedPreferences.Editor editor = PreferenceManager.getDefaultSharedPreferences(MainActivity.this).edit();
             editor.putString("lastLongterm", result);
             editor.commit();

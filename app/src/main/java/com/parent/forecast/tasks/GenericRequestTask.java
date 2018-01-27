@@ -136,6 +136,7 @@ public abstract class GenericRequestTask extends AsyncTask<String, String, TaskO
         if(progressDialog.isShowing()) {
             progressDialog.dismiss();
         }
+
     }
 
     protected final void handleTaskOutput(TaskOutput output) {
@@ -149,10 +150,8 @@ public abstract class GenericRequestTask extends AsyncTask<String, String, TaskO
                     mydb.insert_cities(context,CityName);
 
                     CityModel md = new CityModel(CityName);
-
                     MainActivity.ItemModelList.add(md);
                     MainActivity.customAdapter.notifyDataSetChanged();
-
 
 
                 }else if (ParseResult.CITY_NOT_FOUND.equals(parseResult)) {
